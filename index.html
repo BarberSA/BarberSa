@@ -12,16 +12,20 @@
     <header>
         <nav>
             <div class="container">
-                <div class="logo">
-                    <a href="#home">
-                        <img src="logo.jpg" alt="Professional Cuts Barber">
-                        <span class="logo-text">Barber SA</span>
-                    </a>
-                </div>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
+                <div class="logo">
+                    <a href="#home">
+                        <img src="logo.jpg" alt="Barber SA">
+                        <span class="logo-text">Barber SA</span>
+                    </a>
+                </div>
                 <ul class="nav-menu">
+                    <!-- Close button added here for mobile -->
+                    <div class="close-menu">
+                        <i class="fas fa-times"></i>
+                    </div>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#gallery">Gallery</a></li>
@@ -144,7 +148,7 @@
             <div class="gallery-container">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="gallery1.jpg" alt="Haircut style">
+                        <img src="gallery1.jpg" alt="Haircut style" data-src="gallery1.jpg">
                         <div class="gallery-overlay">
                             <span>Classic Fade</span>
                         </div>
@@ -152,7 +156,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="gallery2.jpg" alt="Beard trim">
+                        <img src="gallery2.jpg" alt="Beard trim" data-src="gallery2.jpg">
                         <div class="gallery-overlay">
                             <span>Beard Styling</span>
                         </div>
@@ -160,7 +164,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="gallery3.jpg" alt="Skin fade">
+                        <img src="gallery3.jpg" alt="Skin fade" data-src="gallery3.jpg">
                         <div class="gallery-overlay">
                             <span>Skin Fade</span>
                         </div>
@@ -168,7 +172,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="gallery4.jpg" alt="Haircut">
+                        <img src="gallery4.jpg" alt="Haircut" data-src="gallery4.jpg">
                         <div class="gallery-overlay">
                             <span>Regular Cut</span>
                         </div>
@@ -190,10 +194,19 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <video autoplay muted loop>
+                    <!-- Mobile-optimized video element -->
+                    <video autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg" id="shop-video">
                         <source src="shop-interior.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                        <source src="shop-interior.webm" type="video/webm">
+                        <!-- Fallback image for browsers that don't support video -->
+                        <img src="shop-interior-fallback.jpg" alt="Barber Shop Interior">
                     </video>
+                    <!-- Fallback controls for mobile -->
+                    <div class="video-controls">
+                        <button class="video-play-btn" id="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h3>Welcome to Barber SA</h3>
@@ -274,7 +287,7 @@
         <div class="container">
             <div class="footer-logo">
                 <div class="footer-logo-container">
-                    <img src="logo.jpg" alt="Professional Cuts Barber" class="footer-logo-img">
+                    <img src="logo.jpg" alt="Barber SA" class="footer-logo-img">
                     <h3 class="footer-logo-text">Barber SA</h3>
                 </div>
                 <p>Premium Barbershop Experience</p>
